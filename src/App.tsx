@@ -1,10 +1,10 @@
-import React from "react";
-import { Counter } from "./features/counter/Counter";
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ROUTES } from "./constants/routes";
-import { Main } from "./pages/Main";
-import { Contacts } from "./pages/Contacts";
+import React from 'react';
+import { Counter } from './features/counter/Counter';
+import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ROUTES } from './constants/routes';
+import { Main } from './pages/Main';
+import { Contacts } from './pages/Contacts';
 
 function App() {
   return (

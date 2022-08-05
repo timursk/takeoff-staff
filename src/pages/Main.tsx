@@ -1,7 +1,5 @@
-type Props = {}
+// type Props = {};
 
-export const Main = (props: Props) => {
-  return (
-    <div>Main</div>
-  )
-}
+export const Main = () => {
+  return <div>Main</div>;
+};
