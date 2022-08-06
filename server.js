@@ -1,15 +1,15 @@
 const jsonServer = require("json-server");
 const fs = require("fs");
 
-fs.writeFileSync(
-  "db.json",
-  `{
-  "users": {
+const initialData = `{
+  "users": [{
+    "id": 1,
     "email": "guest@mail.ru",
     "password": "guest1234"
-  }
-}`
-);
+  }]
+}`;
+
+fs.writeFileSync("db.json", initialData);
 
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
