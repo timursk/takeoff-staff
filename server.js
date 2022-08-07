@@ -5,6 +5,7 @@ const initialData = `{
   "users": [{
     "id": 1,
     "email": "guest@mail.ru",
+    "name": "guest",
     "password": "guest1234"
   }]
 }`;
