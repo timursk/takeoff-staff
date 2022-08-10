@@ -1,29 +1,18 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { ROUTES } from './constants/routes';
-import { Main } from './pages/Main';
-import { Contacts } from './pages/Contacts';
-import { PrivateRoute } from './wrappers/PrivateRoute';
+import { Container } from '@mui/material';
+import { Header } from './components/Header/Header';
+import { Router } from './wrappers/Router';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={ROUTES.MAIN} element={<Main />} />
+    <>
+      <Header />
 
-        <Route
-          path={ROUTES.CONTACTS}
-          element={
-            <PrivateRoute>
-              <Contacts />
-            </PrivateRoute>
-          }
-        />
-
-        <Route path="*" element={<Navigate to={ROUTES.MAIN} replace />} />
-      </Routes>
-    </BrowserRouter>
+      <Container maxWidth="lg">
+        <Router />
+      </Container>
+    </>
   );
 }
 
