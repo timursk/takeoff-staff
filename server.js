@@ -7,6 +7,10 @@ const initialData = `{
     "email": "guest@mail.ru",
     "name": "guest",
     "password": "guest1234"
+  }],
+  "contacts": [{
+    "id": 1,
+    "title": "Guest Guestov"
   }]
 }`;
 

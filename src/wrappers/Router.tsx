@@ -1,6 +1,6 @@
-import { Contacts } from '@mui/icons-material';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { ROUTES } from '../constants/routes';
+import { Contacts } from '../pages/Contacts';
 import { Main } from '../pages/Main';
 import { PrivateRoute } from './PrivateRoute';
 
