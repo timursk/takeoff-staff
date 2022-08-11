@@ -36,7 +36,12 @@ export const deleteContactAsync = createAsyncThunk(
   async ({ id }: DeleteContact) => {
     const response = await deleteContactApi({ id });
 
-    return response.data;
+    if (response.status !== 200) {
+      throw new Error();
+    }
+
+    const result = { id };
+    return result;
   }
 );
 
@@ -59,7 +64,8 @@ const contactsSlice = createSlice({
       });
     },
     deleteContact: (state, action: PayloadAction<Contact>) => {
-      state.contacts.filter((item) => item.id !== action.payload.id);
+      const newContacts = state.contacts.filter((item) => item.id !== action.payload.id);
+      state.contacts = newContacts;
     },
   },
 
@@ -108,7 +114,9 @@ const contactsSlice = createSlice({
       })
       .addCase(deleteContactAsync.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.contacts = state.contacts.filter((item) => item.id !== action.payload.id);
+
+        const newContacts = state.contacts.filter((item) => item.id !== action.payload.id);
+        state.contacts = newContacts;
       })
       .addCase(deleteContactAsync.rejected, (state) => {
         state.isLoading = false;

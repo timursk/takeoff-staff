@@ -10,10 +10,6 @@ type Props = {
 export const ContactCard = ({ title, id }: Props) => {
   const dispatch = useAppDispatch();
 
-  const handleClick = () => {
-    dispatch(addContactAsync({ title: 'Some new contact' }));
-  };
-
   const handleDelete = () => {
     dispatch(deleteContactAsync({ id }));
   };
@@ -22,7 +18,6 @@ export const ContactCard = ({ title, id }: Props) => {
     <>
       <Box>{title}</Box>
       <button onClick={handleDelete}>Remove Contact</button>
-      <button onClick={handleClick}>new contact</button>
     </>
   );
 };
