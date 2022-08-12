@@ -1,12 +1,9 @@
-import { Input } from '@mui/material';
+import styled from '@emotion/styled';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { ContactCard } from '../components/ContactCard/ContactCard';
-import {
-  addContactAsync,
-  getContactsAsync,
-  selectContacts,
-} from '../features/contacts/contactsSlice';
+import { AddContact } from '../components/AddContact';
+import { ContactCard } from '../components/ContactCard';
+import { getContactsAsync, selectContacts } from '../features/contacts/contactsSlice';
 
 export const Contacts = () => {
   const dispatch = useAppDispatch();
@@ -16,18 +13,32 @@ export const Contacts = () => {
     dispatch(getContactsAsync());
   }, [dispatch]);
 
-  const handleClick = () => {
-    dispatch(addContactAsync({ title: 'Some new contact' }));
-  };
-
   return (
-    <>
-      {contacts.map(({ id, title }) => (
-        <ContactCard key={id} id={id} title={title} />
-      ))}
+    <Container>
+      <ContactsContainer>
+        {contacts.map(({ id, title }) => (
+          <ContactCard key={id} id={id} title={title} />
+        ))}
+      </ContactsContainer>
 
-      <Input></Input>
-      <button onClick={handleClick}>new contact</button>
-    </>
+      <AddContact />
+    </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const ContactsContainer = styled.div`
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+`;

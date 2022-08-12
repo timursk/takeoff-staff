@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ROUTES } from '../../constants/routes';
-import { UserLoginForm } from '../../features/user/UserLoginForm';
-import { UserRegistrationForm } from '../../features/user/UserRegistrationForm';
+import { ROUTES } from '../constants/routes';
+import { UserLoginForm } from '../features/user/UserLoginForm';
+import { UserRegistrationForm } from '../features/user/UserRegistrationForm';
 
 type Props = {
   isRegistration: boolean;

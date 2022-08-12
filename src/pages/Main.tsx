@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Paper } from '@mui/material';
 import { Navigate, useMatch } from 'react-router-dom';
 import { useAppSelector } from '../app/hooks';
-import { Form } from '../components/Form/Form';
+import { Form } from '../components/Form';
 import { ROUTES } from '../constants/routes';
 import { selectIsAuth } from '../features/user/userSlice';
 
