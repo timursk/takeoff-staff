@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { Button, InputBase, Paper, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
-import { useAppDispatch } from '../app/hooks';
-import { deleteContactAsync, editContactAsync } from '../features/contacts/contactsSlice';
+import { useAppDispatch } from '../../app/hooks';
+import { deleteContactAsync, editContactAsync } from './contactsSlice';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 

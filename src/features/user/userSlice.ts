@@ -1,13 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState, AppThunk } from '../../app/store';
+import { RootState } from '../../app/store';
 import { Login, User, UserState } from './types';
 import { login as loginAPI, registration } from './userAPI';
 
-// The function below is called a thunk and allows us to perform async logic. It
-// can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
-// will call the thunk with the `dispatch` function as the first argument. Async
-// code can then be executed and other actions can be dispatched. Thunks are
-// typically used to make async requests.
 export const loginAsync = createAsyncThunk(
   'user/fetchLogin',
   async ({ email, password }: Login) => {
@@ -88,16 +83,5 @@ export const { login, logout } = userSlice.actions;
 export const selectUserName = (state: RootState) => state.user.name;
 export const selectIsAuth = (state: RootState) => state.user.isAuth;
 export const selectIsLoading = (state: RootState) => state.user.isLoading;
-
-// // We can also write thunks by hand, which may contain both sync and async logic.
-// // Here's an example of conditionally dispatching actions based on current state.
-// export const incrementIfOdd =
-//   (amount: number): AppThunk =>
-//   (dispatch, getState) => {
-//     const currentValue = selectCount(getState());
-//     if (currentValue % 2 === 1) {
-//       dispatch(incrementByAmount(amount));
-//     }
-//   };
 
 export default userSlice.reducer;

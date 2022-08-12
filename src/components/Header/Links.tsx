@@ -12,10 +12,12 @@ export const Links = () => {
   return (
     <Stack direction="row" spacing={2}>
       {LINKS.map(({ title, to }, idx) => (
-        <StyledNavLink key={idx} to={to}>
-          {({ isActive }) => (
-            <Typography color={isActive ? 'text.primary' : null}>{title}</Typography>
-          )}
+        <StyledNavLink
+          key={idx}
+          to={to}
+          style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : null)}
+        >
+          <Typography>{title}</Typography>
         </StyledNavLink>
       ))}
     </Stack>

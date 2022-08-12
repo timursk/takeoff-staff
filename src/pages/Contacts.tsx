@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { AddContact } from '../components/AddContact';
-import { ContactCard } from '../components/ContactCard';
+import { ContactCard } from '../features/contacts/ContactCard';
 import { getContactsAsync, selectContacts } from '../features/contacts/contactsSlice';
 
 export const Contacts = () => {
